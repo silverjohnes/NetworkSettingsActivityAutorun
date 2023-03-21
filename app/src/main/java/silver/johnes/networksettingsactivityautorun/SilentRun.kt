@@ -4,7 +4,8 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.provider.Settings
-//import androidx.core.content.ContextCompat.startActivity
+import androidx.core.content.ContextCompat.startActivity
+import androidx.appcompat.app.AppCompatActivity
 
 class SilentRun : Service() {
     override fun onBind(intent: Intent): IBinder? {
@@ -15,9 +16,6 @@ class SilentRun : Service() {
         // код, который будет выполняться при старте сервиса
         startActivity(Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
 
-        // или другие варианты:
-        //startActivity( Intent(android.provider.Settings.ACTION_WIFI_SETTINGS))
-        //startActivity(Intent(Settings.ACTION_SETTINGS))
         return START_STICKY
     }
 
