@@ -9,12 +9,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        startActivity(Intent(android.provider.Settings.Panel.ACTION_INTERNET_CONNECTIVITY))
-
-        // или другие варианты:
-        //startActivity( Intent(android.provider.Settings.ACTION_WIFI_SETTINGS))
-        //startActivity(Intent(Settings.ACTION_SETTINGS))
-
+        startService(Intent(this, SilentRun::class.java))
         finish()
     }
 }
